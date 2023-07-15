@@ -1,0 +1,160 @@
+.order-status-page {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.go-back-order-status {
+  margin-top: 2%;
+  margin-left: 2%;
+  background-color: rgb(134, 134, 134);
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.order-status-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  row-gap: 60px;
+  margin-top: 3%;
+}
+
+.order-status {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10%;
+  margin-left: 10%;
+}
+
+.status-btn {
+  width: 150px;
+  height: 60px;
+}
+
+.select-employee {
+  width: 70%;
+  font-size: 20px;
+  height: 60px;
+  background-color: rgb(240, 240, 240);
+  border: 3px solid rgb(63, 122, 127);
+}
+
+.orders {
+  width: 70%;
+  height: 100%;
+  min-height: 600px;
+  margin: 6%;
+  margin-left: 12%;
+  background-color: rgba(249, 251, 253, 0.86);
+  padding: 2%;
+  padding-left: 5%;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  overflow-y: scroll;
+}
+
+.order-active {
+  background-color: rgba(63, 122, 127, 0.441);
+  margin: 1%;
+  width: 60%;
+  height: max-content;
+  justify-content: center;
+  text-align: left;
+  padding-left: 20px;
+  border-radius: 10px;
+}
+
+.order-inactive {
+  background-color: rgba(114, 126, 128, 0.441);
+  margin: 1%;
+  width: 60%;
+  height: max-content;
+  justify-content: center;
+  text-align: left;
+  padding-left: 20px;
+  border-radius: 10px;
+}
+
+.order:hover {
+  cursor: pointer;
+  background-color: rgba(45, 89, 93, 0.441);
+}
+
+.btn-selected {
+  width: 150px;
+  height: 60px;
+  background-color: #ff0000;
+}
+
+@media screen and (max-width: 600px) {
+  .status-btn {
+    width: 70;
+    height: 40px;
+    font-size: 12px;
+    margin-left: 0;
+  }
+
+  .select-employee {
+    width: 50%;
+    font-size: 16px;
+    height: 40px;
+    margin-left: 10%;
+  }
+
+  .order-status-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .order-status {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .orders {
+    width: 80%;
+    margin-left: 5%;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .order-active,
+  .order-inactive {
+    justify-content: center;
+    align-items: center;
+    margin-left: 15%;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 600px) {
+  .status-btn {
+    width: 120;
+    height: 50px;
+    font-weight: 12px;
+    margin-left: 0;
+  }
+
+  .select-employee {
+    width: 40%;
+    font-size: 16px;
+    height: 40px;
+    margin-left: 10%;
+  }
+
+  .order-status-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .orders {
+    width: 80%;
+    margin-left: 5%;
+    grid-template-columns: 1fr 1fr;
+  }
+}

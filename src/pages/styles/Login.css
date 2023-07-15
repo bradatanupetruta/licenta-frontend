@@ -1,0 +1,142 @@
+.login-page {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../styles/media/loginPageImage.jpg");
+  background-size: cover;
+}
+
+.login-container {
+  background-color: rgba(249, 251, 253, 0.86);
+  padding-left: 36px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  height: 40%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  column-gap: 40px;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.pin-enter-text {
+  font-size: 36px;
+  font-weight: bolder;
+  color: rgb(64, 64, 74);
+}
+
+.pin-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pin-input input {
+  width: 56px;
+  height: 50px;
+  font-size: 40px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 10px;
+  border-style: hidden;
+  background-color: #e17329d4;
+}
+
+.refresh-icon {
+  color: rgba(81, 66, 16, 0.988);
+}
+
+.login-button {
+  height: 44px;
+  width: 100px;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(54, 52, 52);
+  background-color: #ce7142;
+  margin-top: 30px;
+  border-radius: 10px;
+  border-style: hidden;
+}
+
+.login-button:hover {
+  background-color: #a75332;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 860px) {
+  .login-container {
+    height: 250px;
+    width: 250px;
+  }
+
+  .pin-enter-text {
+    font-size: 25px;
+  }
+
+  .pin-input input {
+    width: 24px;
+    font-size: 30px;
+    margin: 6px;
+  }
+
+  .login-button {
+    height: 34px;
+    width: 100px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1100px) and (min-width: 590px) {
+  .login-container {
+    height: 40%;
+    width: 50%;
+  }
+
+  .pin-enter-text {
+    font-size: 35px;
+  }
+
+  .pin-input input {
+    width: 40px;
+    font-size: 30px;
+    margin: 6px;
+  }
+
+  .login-button {
+    height: 50px;
+    width: 100px;
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .login-container {
+    height: 35%;
+    width: 50%;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .pin-enter-text {
+    font-size: 32px;
+  }
+
+  .pin-input input {
+    width: 50px;
+    font-size: 30px;
+    margin: 6px;
+  }
+
+  .login-button {
+    height: 50px;
+    width: 100px;
+    font-size: 24px;
+  }
+}

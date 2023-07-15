@@ -1,0 +1,75 @@
+.register-container {
+  background-color: rgba(249, 251, 253, 0.86);
+  padding-left: 36px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  padding-top: 30px;
+  border-radius: 20px;
+  height: 80%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 45%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  row-gap: 70px;
+}
+
+.register-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+}
+
+label {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+input,
+select {
+  height: 30px;
+  font-size: 20px;
+  box-shadow: 10px;
+  border: hidden;
+  border-radius: 10px;
+  background-color: rgba(21, 128, 107, 0.171);
+  padding: 4px;
+}
+
+.register-btn {
+  font-size: 20px;
+  padding: 16px;
+  border: none;
+  background-color: rgba(38, 138, 118, 0.41);
+  font-weight: 600;
+  border-radius: 16px;
+}
+
+.register-btn:hover {
+  background-color: rgba(38, 138, 118, 0.725);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  .register-container {
+    width: 80%;
+  }
+  label {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  input,
+  select {
+    height: 22px;
+    width: max-content;
+    font-size: 14px;
+  }
+}

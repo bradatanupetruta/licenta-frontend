@@ -1,0 +1,58 @@
+.users-container {
+  height: 90%;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.add-user {
+  position: relative;
+  top: 8px;
+  left: 95%;
+}
+
+.username-table {
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll;
+}
+
+.username-table-header {
+  background-color: azure;
+  display: grid;
+  height: 50px;
+  align-items: center;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto;
+}
+
+.username-table-header th {
+  width: 150px;
+}
+
+.username-table-content {
+  background-color: rgb(44, 174, 174);
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.user-elements {
+  display: grid;
+  height: 50px;
+  align-items: center;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto;
+  text-align: left;
+}
+
+.user-elements td {
+  width: max-content;
+  max-width: 150px;
+  border: 1px solid;
+  text-align: left;
+}
+
+.user-elements:hover {
+  background-color: rgba(110, 192, 164, 0.684);
+  cursor: pointer;
+}

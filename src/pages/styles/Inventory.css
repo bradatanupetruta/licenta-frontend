@@ -1,0 +1,80 @@
+.inventory-page {
+  display: block;
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+.go-back {
+  background-color: rgb(134, 134, 134);
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.inventory-container {
+  height: 90%;
+  margin: 50px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  row-gap: 60px;
+  margin-top: 4%;
+}
+
+.inventory-table {
+  width: 80%;
+  height: 100%;
+  overflow-y: scroll hidden;
+}
+
+.add-item {
+  position: relative;
+  top: 8px;
+  left: 95%;
+}
+
+.ingredients-form {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(249, 251, 253, 0.86);
+  height: 160%;
+  max-height: 700px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  row-gap: 70px;
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-add-title {
+  background-color: rgba(33, 96, 95, 0.321);
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 40%;
+  text-align: center;
+}
+
+.very-low {
+  background-color: rgba(229, 101, 101, 0.737);
+}
+
+.low {
+  background-color: rgba(255, 255, 0, 0.558);
+}
+
+@media screen and (max-width: 1200px) {
+  .inventory-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inventory-table {
+    width: 90%;
+  }
+}

@@ -1,0 +1,96 @@
+.menu-container {
+  width: 100%;
+  margin-top: 50px;
+  height: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  justify-items: center;
+  overflow-y: auto;
+  max-height: inherit;
+}
+
+.menu-item {
+  border-radius: 4px;
+  background-color: rgba(183, 179, 175, 0.638);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 190px;
+  width: 100%;
+}
+
+.photo {
+  object-fit: cover;
+  border-radius: 4px;
+  height: 150px;
+  width: 100%;
+  display: block;
+}
+
+.menu-item h4,
+.very-low-class h4,
+.low-class h4 {
+  margin: 2px;
+  text-align: center;
+}
+
+.low-class {
+  background-color: rgb(255, 247, 4);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 190px;
+  width: 100%;
+}
+
+.very-low-class {
+  background-color: rgb(240, 67, 67);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 190px;
+  width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+  .menu-container {
+    width: 60%;
+    grid-template-columns: 1fr 1fr;
+    min-height: 500px;
+    align-items: center;
+  }
+
+  .menu-item,
+  .low-class,
+  .very-low-class {
+    height: 150px;
+    width: 150px;
+  }
+
+  .photo {
+    height: 100px;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1400px) {
+  .menu-container {
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 500px;
+    align-items: center;
+  }
+
+  .menu-item,
+  .low-class,
+  .very-low-class {
+    height: 150px;
+    width: 150px;
+  }
+
+  .photo {
+    height: 100px;
+  }
+}
