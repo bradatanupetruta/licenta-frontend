@@ -114,6 +114,8 @@ function Order() {
   };
 
   const addItems = (menuItem) => {
+      checkAvailability(menuItem);
+      if(!menuItem.emptyStock) {
     updateIngredientMap(menuItem);
     evaluateSock(ingredientMap, menuItem);
 
@@ -130,6 +132,7 @@ function Order() {
       menuItem.quantity = 1;
       setReceiptItems([...receiptItems, menuItem]);
     }
+    }
   };
 
   const evaluateSock = (ingredientMap, menuItem) => {
@@ -139,7 +142,7 @@ function Order() {
         menuItem.alert = "VERY_LOW";
       } else if (existingQuantity < 50 && menuItem.alert !== "VERY_LOW") {
         menuItem.alert = "LOW";
-      } else if (menuItem.alert !== "VERY_LOW" || menuItem.alert !== "LOW") {
+      } else if (menuItem.alert !== "VERY_LOW" && menuItem.alert !== "LOW") {
         menuItem.alert = "OK";
       }
     }
@@ -154,6 +157,18 @@ function Order() {
     }
     setIngredientMap(ingredientMap);
   };
+
+   const checkAvailability = (menuItem) => {
+      for (var i = 0; i < menuItem.ingredients.length; i++) {
+        const existingQuantity = ingredientMap.get(menuItem.ingredients[i].id);
+        const usedQuantity = menuItem.ingredients[i].quantity;
+        const totalQuantity = existingQuantity - usedQuantity;
+        if(totalQuantity < 0) {
+          menuItem.emptyStock = true;
+        }
+      }
+    };
+
   const itemExists = (menuItem) => {
     var exist = false;
     receiptItems.forEach((item) => {
