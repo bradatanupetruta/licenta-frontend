@@ -190,7 +190,7 @@ function UpdateMenu() {
   };
 
   return (
-    <div className="inventory-page">
+    <div className="menu-mngm-page">
       {openModal && (
         <ModalWindow
           closeModal={setOpenModal}
@@ -202,7 +202,7 @@ function UpdateMenu() {
         fontSize="large"
         onClick={() => navigate("/home")}
       ></ArrowBackIcon>
-      <div className="inventory-container">
+      <div className="menu-mngm-container">
         <TableContainer component={Paper}>
           <Table
             sx={{ minWidth: 650, overflowX: "scroll" }}

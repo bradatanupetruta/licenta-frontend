@@ -6,8 +6,8 @@ function DonutChart({ productCategory, categoryValue }) {
     <div className="donut-chart">
       <Chart
         type="donut"
-        width={500}
-        height={500}
+        width={660}
+        height={660}
         series={[...categoryValue]}
         options={{
           labels: [...productCategory],
