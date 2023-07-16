@@ -1,7 +1,13 @@
 .inventory-page {
-  display: block;
+  /* display: block;
   margin-top: 2%;
-  margin-left: 2%;
+  margin-left: 2%; */
+
+  height: 90%;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 }
 
 .go-back {
@@ -17,6 +23,7 @@
   grid-template-columns: 2fr 1fr;
   row-gap: 60px;
   margin-top: 4%;
+  column-gap: 5%;
 }
 
 .inventory-table {

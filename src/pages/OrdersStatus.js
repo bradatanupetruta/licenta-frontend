@@ -25,7 +25,7 @@ function OrdersStatus() {
       setUsers([...users, currentUser]);
     }
 
-    if(!!currentUser) {
+    if (!!currentUser) {
       getOrders();
     }
   }, []);
@@ -93,7 +93,7 @@ function OrdersStatus() {
   };
 
   const getUserName = (user) => {
-    if(!user) {
+    if (!user) {
       return "";
     }
     return user.lastName + " " + user.firstName;
@@ -163,7 +163,7 @@ function OrdersStatus() {
               <h2>Order {order.orderId}</h2>
               <p>Date: {order.date}</p>
               <p>Server: {order.server}</p>
-              <p>Total: {order.total}</p>
+              <p className="total">Total: {order.total}</p>
             </div>
           );
         })}

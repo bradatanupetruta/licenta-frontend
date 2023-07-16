@@ -38,6 +38,10 @@ function Inventory() {
       });
   };
 
+  function evaluateIngredient() {
+    return !!name && !!quantity;
+  }
+
   const saveIngredient = () => {
     const ingredient = {
       id: ingredientId,
@@ -45,23 +49,25 @@ function Inventory() {
       quantity,
     };
 
-    fetch("/ingredient/save", {
-      method: "POST",
-      body: JSON.stringify(ingredient),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((response) => {
-        if (response.status === 200) {
-          console.log("Ingredient successfully saved!");
-        }
-        getIngredients();
-        cleanUpInventoryDialog();
+    if (evaluateIngredient()) {
+      fetch("/ingredient/save", {
+        method: "POST",
+        body: JSON.stringify(ingredient),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
       })
-      .catch((err) => {
-        console.log(err.message);
-      });
+        .then((response) => {
+          if (response.status === 200) {
+            console.log("Ingredient successfully saved!");
+          }
+          getIngredients();
+          cleanUpInventoryDialog();
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    }
   };
 
   const editIngredient = (ingredient) => {
@@ -81,7 +87,7 @@ function Inventory() {
       .then((response) => {
         if (response.status === 200) {
           console.log("Product successfully deleted!");
-        } else if(response.status === 409) {
+        } else if (response.status === 409) {
           alert("Ingredient is in use and can not be deleted!");
         }
         getIngredients();
@@ -100,108 +106,108 @@ function Inventory() {
         onClick={() => navigate("/home")}
       ></ArrowBackIcon>
       <div className="inventory-container">
-        <div className="inventory-table">
-          <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
-              <TableHead>
-                <TableRow
+        <TableContainer component={Paper}>
+          <Table
+            sx={{ minWidth: 650, overflowX: "scroll" }}
+            aria-label="simple table"
+          >
+            <TableHead>
+              <TableRow
+                sx={{
+                  backgroundColor: " rgba(33, 96, 95, 0.5)",
+                  height: 70,
+                }}
+              >
+                <TableCell
                   sx={{
-                    backgroundColor: " rgba(33, 96, 95, 0.5)",
-                    height: 70,
+                    fontWeight: 700,
+                    fontSize: 18,
                   }}
+                >
+                  Name
+                </TableCell>
+                <TableCell
+                  sx={{
+                    fontWeight: 700,
+                    fontSize: 18,
+                  }}
+                  align="center"
+                >
+                  Quantity
+                </TableCell>
+                <TableCell
+                  sx={{
+                    fontWeight: 700,
+                    fontSize: 18,
+                  }}
+                  align="center"
+                >
+                  Edit
+                </TableCell>
+                <TableCell
+                  sx={{
+                    fontWeight: 700,
+                    fontSize: 18,
+                  }}
+                  align="center"
+                >
+                  Delete
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {ingredients.map((ingredient) => (
+                <TableRow
+                  className={
+                    ingredient.quantity <= 10
+                      ? "very-low"
+                      : ingredient.quantity > 10 && ingredient.quantity <= 30
+                      ? "low"
+                      : "normal"
+                  }
+                  key={ingredient.id}
+                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell
                     sx={{
                       fontWeight: 700,
-                      fontSize: 18,
+                      fontSize: 15,
                     }}
+                    component="th"
+                    scope="row"
                   >
-                    Name
+                    {ingredient.name}
                   </TableCell>
                   <TableCell
                     sx={{
                       fontWeight: 700,
-                      fontSize: 18,
+                      fontSize: 15,
                     }}
                     align="center"
                   >
-                    Quantity
+                    {ingredient.quantity}
                   </TableCell>
-                  <TableCell
-                    sx={{
-                      fontWeight: 700,
-                      fontSize: 18,
-                    }}
-                    align="center"
-                  >
-                    Edit
+                  <TableCell align="center">
+                    {" "}
+                    <EditIcon
+                      fontSize="large"
+                      sx={{ cursor: "pointer" }}
+                      onClick={() => editIngredient(ingredient)}
+                    ></EditIcon>
                   </TableCell>
-                  <TableCell
-                    sx={{
-                      fontWeight: 700,
-                      fontSize: 18,
-                    }}
-                    align="center"
-                  >
-                    Delete
+                  <TableCell align="center">
+                    {" "}
+                    <DeleteForeverIcon
+                      fontSize="large"
+                      sx={{ cursor: "pointer" }}
+                      onClick={() => deleteIngredient(ingredient.id)}
+                    ></DeleteForeverIcon>
                   </TableCell>
                 </TableRow>
-              </TableHead>
-              <TableBody>
-                {ingredients.map((ingredient) => (
-                  <TableRow
-                    className={
-                      ingredient.quantity <= 10
-                        ? "very-low"
-                        : ingredient.quantity > 10 && ingredient.quantity <= 30
-                        ? "low"
-                        : "normal"
-                    }
-                    key={ingredient.id}
-                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                  >
-                    <TableCell
-                      sx={{
-                        fontWeight: 700,
-                        fontSize: 15,
-                      }}
-                      component="th"
-                      scope="row"
-                    >
-                      {ingredient.name}
-                    </TableCell>
-                    <TableCell
-                      sx={{
-                        fontWeight: 700,
-                        fontSize: 15,
-                      }}
-                      align="center"
-                    >
-                      {ingredient.quantity}
-                    </TableCell>
-                    <TableCell align="center">
-                      {" "}
-                      <EditIcon
-                        fontSize="large"
-                        sx={{ cursor: "pointer" }}
-                        onClick={() => editIngredient(ingredient)}
-                      ></EditIcon>
-                    </TableCell>
-                    <TableCell align="center">
-                      {" "}
-                      <DeleteForeverIcon
-                        fontSize="large"
-                        sx={{ cursor: "pointer" }}
-                        onClick={() => deleteIngredient(ingredient.id)}
-                      ></DeleteForeverIcon>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </div>
-
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
         <div className="ingredients-form">
           <form className="add-form">
             <h2 className="form-add-title">Add ingredient</h2>

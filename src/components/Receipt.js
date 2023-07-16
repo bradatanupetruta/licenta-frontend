@@ -81,7 +81,7 @@ function Receipt({ items, tabindex, orderId }) {
   };
 
   const getServerName = () => {
-    if(!server) {
+    if (!server) {
       return "";
     }
     return server.lastName + " " + server.firstName;
@@ -126,7 +126,7 @@ function Receipt({ items, tabindex, orderId }) {
           </table>
         </div>
 
-        <div className="receipt-total">{total.toFixed(2)} RON</div>
+        <div className="receipt-total">{total.toFixed(2)} $</div>
       </div>
 
       <div className="receipt-actions">

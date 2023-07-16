@@ -87,6 +87,10 @@
   background-color: #ff0000;
 }
 
+.total {
+  font-weight: bold;
+}
+
 @media screen and (max-width: 600px) {
   .status-btn {
     width: 70;

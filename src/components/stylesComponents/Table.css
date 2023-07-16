@@ -20,8 +20,27 @@
   font-size: 18px;
 }
 
+.busy-table {
+  background-color: rgba(202, 64, 64, 0.904);
+  width: 300px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid rgba(163, 8, 8, 0.497);
+  border-radius: 50px;
+  margin-left: 50px;
+  margin-top: 60px;
+  font-size: 18px;
+}
+
 .table-container:hover {
   background-color: rgba(25, 25, 25, 0.852);
+  cursor: pointer;
+}
+
+.busy-table:hover {
+  background-color: rgb(240, 61, 61);
   cursor: pointer;
 }
 

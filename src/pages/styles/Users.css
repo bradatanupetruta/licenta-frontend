@@ -12,7 +12,7 @@
   left: 95%;
 }
 
-.username-table {
+/* .username-table {
   width: 100%;
   height: 100%;
   overflow-x: scroll;
@@ -28,9 +28,9 @@
 
 .username-table-header th {
   width: 150px;
-}
+} */
 
-.username-table-content {
+/* .username-table-content {
   background-color: rgb(44, 174, 174);
   display: flex;
   flex-direction: column;
@@ -50,9 +50,9 @@
   max-width: 150px;
   border: 1px solid;
   text-align: left;
-}
+} */
 
-.user-elements:hover {
+/* .user-elements:hover {
   background-color: rgba(110, 192, 164, 0.684);
   cursor: pointer;
-}
+} */
